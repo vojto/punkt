@@ -29,7 +29,7 @@ class Issue: NSObject {
     
     func removeLabel(label: String) {
         let index = $.findIndex(labels) { $0 == label }
-        if index {
+        if index != nil {
             labels.removeAtIndex(index!)
         }
     }

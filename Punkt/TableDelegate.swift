@@ -37,6 +37,10 @@ class CardView: NSView {
     }
     }
     
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
+    
     override init(frame: NSRect) {
         super.init(frame: frame)
         
@@ -109,6 +113,10 @@ class CardCollectionItem: NSCollectionViewItem {
 class RowHeaderView: NSView {
     let label = Label(frame: NSZeroRect)
     let row: Row
+    
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
     
     init(frame: NSRect, row: Row) {
         self.row = row
@@ -471,7 +479,7 @@ class TableDelegate: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         for tableColumn: NSTableColumn in tableView.tableColumns as [NSTableColumn] {
             let index = tableColumn.identifier.toInt()
             println("picking \(index) from \(self.columns)")
-            if !index { continue }
+//            if !index { continue }
             let column = self.columns[index!]
             column.weight = i
             i += 1
