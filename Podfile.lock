@@ -1,0 +1,38 @@
+PODS:
+  - BlocksKit (2.2.3):
+    - BlocksKit/All
+  - BlocksKit/All (2.2.3):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.3)
+  - BlocksKit/DynamicDelegate (2.2.3)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
+  - NiceKit (0.0.1):
+    - BlocksKit
+  - RNEvents (0.0.1)
+  - UAGithubEngine (2.3)
+
+DEPENDENCIES:
+  - MagicalRecord
+  - NiceKit (from `https://github.com/vojto/nicekit.git`)
+  - RNEvents (from `git@github.com:vojto/RNEvents.git`)
+  - UAGithubEngine
+
+EXTERNAL SOURCES:
+  NiceKit:
+    :git: https://github.com/vojto/nicekit.git
+  RNEvents:
+    :git: git@github.com:vojto/RNEvents.git
+
+SPEC CHECKSUMS:
+  BlocksKit: 07c8a80f04275efac6a5f8b973782489c083a182
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  NiceKit: 35638d41560d5d307c9af769bdc9d2ff2c482f88
+  RNEvents: 86ecdd5aaf10208eecb2d152dd6675b3c5d0e1ca
+  UAGithubEngine: 0a7b38bed28323b07f59ca90324ed42f44a65c23
+
+COCOAPODS: 0.32.1
