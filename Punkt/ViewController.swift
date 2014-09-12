@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         
         let issues = [
             ("Meet Marka", ["bar", "baz"]),
-            ("Ask her out on a date", ["bar", "baz"])
+            ("Ask her out on many many dates to follow", ["bar", "baz"])
         ]
         
         list.numberOfItems = issues.count

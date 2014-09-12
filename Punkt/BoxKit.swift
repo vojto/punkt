@@ -256,8 +256,7 @@ class Box : NSObject {
             NSException(name: "cannot layout", reason: "box can't have both children and text", userInfo: nil).raise()
         }
         
-        println("Laying out \(width) \(height)")
-        
+
         // Try to compute dimensions based on text
         self.computeDimensionsFromText()
         
@@ -318,8 +317,6 @@ class Box : NSObject {
         
         var totalHeight = top + lastHeight
 
-        println("done laying out fluid children... \((width, height))")
-
         // Layout all absolute children
         var absoluteChildrenHeight: Float = 0
 
@@ -371,8 +368,7 @@ class Box : NSObject {
             }
         }
         
-        println("\(name): HEIGHT: \(height) --> \(totalHeight) --> \(absoluteChildrenHeight)")
-        
+
         if absoluteChildrenHeight > totalHeight {
             totalHeight = absoluteChildrenHeight
         }
@@ -405,7 +401,6 @@ class Box : NSObject {
             self.height = self.childrenHeight
         }
         
-        println("    FINAL HEIGHT: \(self.height)")
         
 //        println("    result is \((self.width, self.height))")
     }
@@ -424,9 +419,11 @@ class Box : NSObject {
         var availableSize = CGSize(width: CGFloat(availableWidth), height: CGFloat(availableHeight))
         
         var size = string.boundingRectWithSize(availableSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: self.textAttributes())
+        
+        println("Dimensions computed for text \(text): \(size)")
 
-        self.width = Float(size.width)
-        self.height = Float(size.height)
+        self.width = Float(ceil(size.width))
+        self.height = Float(ceil(size.height))
 
     
     }
