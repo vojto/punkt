@@ -18,8 +18,8 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         
         let issues = [
-            ("Meet Marka", ["bar", "baz"]),
-            ("Ask her out on many many dates to follow", ["bar", "baz"])
+            ("This line might be a little bit longer than usual, because I'm trying to see if the lines break properly.", ["bar", "baz"]),
+            ("And this one's short", ["bar", "baz"])
         ]
         
         list.numberOfItems = issues.count
@@ -68,15 +68,12 @@ class ViewController: NSViewController {
         title.name = "title"
         title.font = NSFont.boldSystemFontOfSize(13)
         title.padding.top = 8
-        //        title.backgroundColor = NSColor.yellowColor()
         content.add(title)
         
         var labels = Box()
+        labels.breaksLine = true
         labels.name = "labels"
         //        labels.backgroundColor = NSColor.blueColor()
-        labels.position.left = 0
-        labels.position.right = 0
-        labels.position.top = 30
         content.add(labels)
         
         func addLabel(text: String, color: String) {

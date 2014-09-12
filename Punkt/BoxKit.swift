@@ -126,6 +126,7 @@ class Box : NSObject {
     
     private var width: Float?
     private var height: Float?
+    var breaksLine = false
     
     private var childrenWidth: Float = 0
     private var childrenHeight: Float = 0
@@ -258,7 +259,7 @@ class Box : NSObject {
         
 
         // Try to compute dimensions based on text
-        self.computeDimensionsFromText()
+        self.computeDimensionsFromText(parent)
         
         // Layout children inside this box
         var top: Float = 0
@@ -296,7 +297,7 @@ class Box : NSObject {
             }
             
             // New line
-            if (containerWidth - left) < child.outerWidth {
+            if child.breaksLine || (containerWidth - left) < child.outerWidth {
                 rowWidths.append(left + child.outerWidth)
                 
                 top += rowHeight
@@ -405,7 +406,7 @@ class Box : NSObject {
 //        println("    result is \((self.width, self.height))")
     }
     
-    func computeDimensionsFromText() {
+    func computeDimensionsFromText(parent: Box?) {
         if self.width != nil && self.height != nil {
             return
         }
@@ -414,8 +415,18 @@ class Box : NSObject {
         }
         
         var string = NSString(string: self.text!)
-        var availableWidth = self.width != nil ? self.width! : Float(Int.max)
-        var availableHeight = self.height != nil ? self.height! : Float(Int.max)
+        
+        var availableWidth, availableHeight: Float
+        
+        if self.width != nil {
+            availableWidth = self.width!
+        } else if parent != nil && parent!.width != nil {
+            availableWidth = parent!.width!
+        } else {
+            availableWidth = Float(Int.max)
+        }
+        
+        availableHeight = self.height != nil ? self.height! : Float(Int.max)
         var availableSize = CGSize(width: CGFloat(availableWidth), height: CGFloat(availableHeight))
         
         var size = string.boundingRectWithSize(availableSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: self.textAttributes())
