@@ -16,16 +16,11 @@ class BoxList: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
     override init() {
         self.numberOfItems = 3
-        
-        self.itemAtIndex = {
-            var box = Box()
-            box.outerHeight = ($0 == 0) ? 20 : 50
-            box.backgroundColor = NSColor.redColor()
-            return box
-        }
     }
     
-    var itemAtIndex: (index: Int) -> Box?
+    var itemAtIndex: (index: Int) -> Box? = { _ in
+        return nil
+    }
     
     func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
         return self.numberOfItems
@@ -33,8 +28,21 @@ class BoxList: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(tableView: NSTableView!, heightOfRow row: Int) -> CGFloat {
         var box = self.boxAtIndex(row)
-        print("box at index \(row) is \(box)")
+        box.outerWidth = Float(tableView.bounds.size.width)
+        box.layout()
         return CGFloat(box.outerHeight)
+    }
+    
+    func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
+        let width = tableColumn.width
+        println("Getting view for row \(row) - column width \(width)")
+        
+        var box = self.boxAtIndex(row)
+        box.outerWidth = Float(width)
+        
+        box.layout()
+        
+        return box.view()
     }
     
     func boxAtIndex(index: Int) -> Box {
@@ -47,6 +55,34 @@ class BoxList: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         self.cachedBoxes[index] = box
         
         return box
+    }
+    
+    func view(frame: NSRect) -> NSView {
+        let scrollView = NSScrollView(frame: frame)
+        // should it be bigger than the scroll view?
+        let tableView = NSTableView(frame: frame)
+        
+        let column = NSTableColumn(identifier: "column")
+        column.width = frame.size.width
+        
+//        println("Setting delegate/data source to: \(self)")
+        
+        tableView.addTableColumn(column)
+        tableView.setDelegate(self)
+        tableView.setDataSource(self)
+        tableView.reloadData() // needed?
+        
+        tableView.allowsColumnReordering = false
+        tableView.allowsColumnResizing = false
+        tableView.allowsColumnSelection = false
+        tableView.headerView = nil
+        
+        tableView.gridStyleMask = NSTableViewGridLineStyle.SolidHorizontalGridLineMask;
+        
+        scrollView.documentView = tableView
+        scrollView.hasVerticalScroller = true // needed?
+        
+        return scrollView
     }
     
 

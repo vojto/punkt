@@ -16,6 +16,7 @@
 		99B838E219C322E600E4D0FE /* TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E119C322E600E4D0FE /* TableDelegate.swift */; };
 		99B838E419C3241F00E4D0FE /* BoxKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E319C3241F00E4D0FE /* BoxKit.swift */; };
 		99B838E619C3242B00E4D0FE /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E519C3242B00E4D0FE /* Dollar.swift */; };
+		99B838EA19C32D7C00E4D0FE /* NSColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E919C32D7C00E4D0FE /* NSColor+Hex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,9 @@
 		99B838E119C322E600E4D0FE /* TableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDelegate.swift; sourceTree = "<group>"; };
 		99B838E319C3241F00E4D0FE /* BoxKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxKit.swift; sourceTree = "<group>"; };
 		99B838E519C3242B00E4D0FE /* Dollar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
+		99B838E719C32D7B00E4D0FE /* Punkt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Punkt-Bridging-Header.h"; sourceTree = "<group>"; };
+		99B838E819C32D7C00E4D0FE /* NSColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Hex.h"; sourceTree = "<group>"; };
+		99B838E919C32D7C00E4D0FE /* NSColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Hex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		99B838BF19C3214B00E4D0FE /* Punkt */ = {
 			isa = PBXGroup;
 			children = (
+				99B838E819C32D7C00E4D0FE /* NSColor+Hex.h */,
+				99B838E919C32D7C00E4D0FE /* NSColor+Hex.m */,
 				99B838C419C3214B00E4D0FE /* ViewController.swift */,
 				99B838C619C3214B00E4D0FE /* AppDelegate.swift */,
 				99B838C819C3214B00E4D0FE /* Images.xcassets */,
@@ -91,6 +97,7 @@
 				99B838E119C322E600E4D0FE /* TableDelegate.swift */,
 				99B838E319C3241F00E4D0FE /* BoxKit.swift */,
 				99B838E519C3242B00E4D0FE /* Dollar.swift */,
+				99B838E719C32D7B00E4D0FE /* Punkt-Bridging-Header.h */,
 			);
 			path = Punkt;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B838EA19C32D7C00E4D0FE /* NSColor+Hex.m in Sources */,
 				99B838E419C3241F00E4D0FE /* BoxKit.swift in Sources */,
 				99B838E619C3242B00E4D0FE /* Dollar.swift in Sources */,
 				99B838C719C3214B00E4D0FE /* AppDelegate.swift in Sources */,
@@ -340,10 +348,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Punkt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Punkt/Punkt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -351,10 +362,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Punkt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Punkt/Punkt-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -247,6 +247,10 @@ class Box : NSObject {
     }
     
     func layout(parent: Box?) {
+        if isLaidOut {
+            return
+        }
+        
         // Reality check
         if self.text != nil && self.children.count > 0 {
             NSException(name: "cannot layout", reason: "box can't have both children and text", userInfo: nil).raise()
