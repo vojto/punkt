@@ -7,46 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99B8389519C3209E00E4D0FE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8389419C3209E00E4D0FE /* main.swift */; };
-		99B8389719C3209E00E4D0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8389619C3209E00E4D0FE /* AppDelegate.swift */; };
-		99B8389A19C3209E00E4D0FE /* Punkt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B8389819C3209E00E4D0FE /* Punkt.xcdatamodeld */; };
-		99B8389C19C3209E00E4D0FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B8389B19C3209E00E4D0FE /* Images.xcassets */; };
-		99B8389F19C3209E00E4D0FE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B8389D19C3209E00E4D0FE /* MainMenu.xib */; };
-		99B838AB19C3209E00E4D0FE /* PunktTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838AA19C3209E00E4D0FE /* PunktTests.swift */; };
+		99B838C319C3214B00E4D0FE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C219C3214B00E4D0FE /* main.swift */; };
+		99B838C519C3214B00E4D0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C419C3214B00E4D0FE /* ViewController.swift */; };
+		99B838C719C3214B00E4D0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C619C3214B00E4D0FE /* AppDelegate.swift */; };
+		99B838C919C3214B00E4D0FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B838C819C3214B00E4D0FE /* Images.xcassets */; };
+		99B838CC19C3214B00E4D0FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B838CA19C3214B00E4D0FE /* Main.storyboard */; };
+		99B838D819C3214B00E4D0FE /* PunktTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838D719C3214B00E4D0FE /* PunktTests.swift */; };
+		99B838E219C322E600E4D0FE /* TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E119C322E600E4D0FE /* TableDelegate.swift */; };
+		99B838E419C3241F00E4D0FE /* BoxKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E319C3241F00E4D0FE /* BoxKit.swift */; };
+		99B838E619C3242B00E4D0FE /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E519C3242B00E4D0FE /* Dollar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		99B838A519C3209E00E4D0FE /* PBXContainerItemProxy */ = {
+		99B838D219C3214B00E4D0FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 99B8388719C3209E00E4D0FE /* Project object */;
+			containerPortal = 99B838B519C3214B00E4D0FE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 99B8388E19C3209E00E4D0FE;
+			remoteGlobalIDString = 99B838BC19C3214B00E4D0FE;
 			remoteInfo = Punkt;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		99B8388F19C3209E00E4D0FE /* Punkt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punkt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		99B8389319C3209E00E4D0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99B8389419C3209E00E4D0FE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		99B8389619C3209E00E4D0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99B8389919C3209E00E4D0FE /* Punkt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Punkt.xcdatamodel; sourceTree = "<group>"; };
-		99B8389B19C3209E00E4D0FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		99B8389E19C3209E00E4D0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		99B838A419C3209E00E4D0FE /* PunktTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunktTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99B838A919C3209E00E4D0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99B838AA19C3209E00E4D0FE /* PunktTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunktTests.swift; sourceTree = "<group>"; };
+		99B838BD19C3214B00E4D0FE /* Punkt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punkt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99B838C119C3214B00E4D0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99B838C219C3214B00E4D0FE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		99B838C419C3214B00E4D0FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99B838C619C3214B00E4D0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		99B838C819C3214B00E4D0FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		99B838CB19C3214B00E4D0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		99B838D119C3214B00E4D0FE /* PunktTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunktTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99B838D619C3214B00E4D0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99B838D719C3214B00E4D0FE /* PunktTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunktTests.swift; sourceTree = "<group>"; };
+		99B838E119C322E600E4D0FE /* TableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDelegate.swift; sourceTree = "<group>"; };
+		99B838E319C3241F00E4D0FE /* BoxKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxKit.swift; sourceTree = "<group>"; };
+		99B838E519C3242B00E4D0FE /* Dollar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		99B8388C19C3209E00E4D0FE /* Frameworks */ = {
+		99B838BA19C3214B00E4D0FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99B838A119C3209E00E4D0FE /* Frameworks */ = {
+		99B838CE19C3214B00E4D0FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,58 +62,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		99B8388619C3209E00E4D0FE = {
+		99B838B419C3214B00E4D0FE = {
 			isa = PBXGroup;
 			children = (
-				99B8389119C3209E00E4D0FE /* Punkt */,
-				99B838A719C3209E00E4D0FE /* PunktTests */,
-				99B8389019C3209E00E4D0FE /* Products */,
+				99B838BF19C3214B00E4D0FE /* Punkt */,
+				99B838D419C3214B00E4D0FE /* PunktTests */,
+				99B838BE19C3214B00E4D0FE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		99B8389019C3209E00E4D0FE /* Products */ = {
+		99B838BE19C3214B00E4D0FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99B8388F19C3209E00E4D0FE /* Punkt.app */,
-				99B838A419C3209E00E4D0FE /* PunktTests.xctest */,
+				99B838BD19C3214B00E4D0FE /* Punkt.app */,
+				99B838D119C3214B00E4D0FE /* PunktTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		99B8389119C3209E00E4D0FE /* Punkt */ = {
+		99B838BF19C3214B00E4D0FE /* Punkt */ = {
 			isa = PBXGroup;
 			children = (
-				99B8389619C3209E00E4D0FE /* AppDelegate.swift */,
-				99B8389B19C3209E00E4D0FE /* Images.xcassets */,
-				99B8389D19C3209E00E4D0FE /* MainMenu.xib */,
-				99B8389819C3209E00E4D0FE /* Punkt.xcdatamodeld */,
-				99B8389219C3209E00E4D0FE /* Supporting Files */,
+				99B838C419C3214B00E4D0FE /* ViewController.swift */,
+				99B838C619C3214B00E4D0FE /* AppDelegate.swift */,
+				99B838C819C3214B00E4D0FE /* Images.xcassets */,
+				99B838CA19C3214B00E4D0FE /* Main.storyboard */,
+				99B838C019C3214B00E4D0FE /* Supporting Files */,
+				99B838E119C322E600E4D0FE /* TableDelegate.swift */,
+				99B838E319C3241F00E4D0FE /* BoxKit.swift */,
+				99B838E519C3242B00E4D0FE /* Dollar.swift */,
 			);
 			path = Punkt;
 			sourceTree = "<group>";
 		};
-		99B8389219C3209E00E4D0FE /* Supporting Files */ = {
+		99B838C019C3214B00E4D0FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				99B8389319C3209E00E4D0FE /* Info.plist */,
-				99B8389419C3209E00E4D0FE /* main.swift */,
+				99B838C119C3214B00E4D0FE /* Info.plist */,
+				99B838C219C3214B00E4D0FE /* main.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		99B838A719C3209E00E4D0FE /* PunktTests */ = {
+		99B838D419C3214B00E4D0FE /* PunktTests */ = {
 			isa = PBXGroup;
 			children = (
-				99B838AA19C3209E00E4D0FE /* PunktTests.swift */,
-				99B838A819C3209E00E4D0FE /* Supporting Files */,
+				99B838D719C3214B00E4D0FE /* PunktTests.swift */,
+				99B838D519C3214B00E4D0FE /* Supporting Files */,
 			);
 			path = PunktTests;
 			sourceTree = "<group>";
 		};
-		99B838A819C3209E00E4D0FE /* Supporting Files */ = {
+		99B838D519C3214B00E4D0FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				99B838A919C3209E00E4D0FE /* Info.plist */,
+				99B838D619C3214B00E4D0FE /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,13 +124,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		99B8388E19C3209E00E4D0FE /* Punkt */ = {
+		99B838BC19C3214B00E4D0FE /* Punkt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99B838AE19C3209E00E4D0FE /* Build configuration list for PBXNativeTarget "Punkt" */;
+			buildConfigurationList = 99B838DB19C3214B00E4D0FE /* Build configuration list for PBXNativeTarget "Punkt" */;
 			buildPhases = (
-				99B8388B19C3209E00E4D0FE /* Sources */,
-				99B8388C19C3209E00E4D0FE /* Frameworks */,
-				99B8388D19C3209E00E4D0FE /* Resources */,
+				99B838B919C3214B00E4D0FE /* Sources */,
+				99B838BA19C3214B00E4D0FE /* Frameworks */,
+				99B838BB19C3214B00E4D0FE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -129,46 +138,46 @@
 			);
 			name = Punkt;
 			productName = Punkt;
-			productReference = 99B8388F19C3209E00E4D0FE /* Punkt.app */;
+			productReference = 99B838BD19C3214B00E4D0FE /* Punkt.app */;
 			productType = "com.apple.product-type.application";
 		};
-		99B838A319C3209E00E4D0FE /* PunktTests */ = {
+		99B838D019C3214B00E4D0FE /* PunktTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99B838B119C3209E00E4D0FE /* Build configuration list for PBXNativeTarget "PunktTests" */;
+			buildConfigurationList = 99B838DE19C3214B00E4D0FE /* Build configuration list for PBXNativeTarget "PunktTests" */;
 			buildPhases = (
-				99B838A019C3209E00E4D0FE /* Sources */,
-				99B838A119C3209E00E4D0FE /* Frameworks */,
-				99B838A219C3209E00E4D0FE /* Resources */,
+				99B838CD19C3214B00E4D0FE /* Sources */,
+				99B838CE19C3214B00E4D0FE /* Frameworks */,
+				99B838CF19C3214B00E4D0FE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				99B838A619C3209E00E4D0FE /* PBXTargetDependency */,
+				99B838D319C3214B00E4D0FE /* PBXTargetDependency */,
 			);
 			name = PunktTests;
 			productName = PunktTests;
-			productReference = 99B838A419C3209E00E4D0FE /* PunktTests.xctest */;
+			productReference = 99B838D119C3214B00E4D0FE /* PunktTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		99B8388719C3209E00E4D0FE /* Project object */ = {
+		99B838B519C3214B00E4D0FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Vojtech Rinik";
 				TargetAttributes = {
-					99B8388E19C3209E00E4D0FE = {
+					99B838BC19C3214B00E4D0FE = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					99B838A319C3209E00E4D0FE = {
+					99B838D019C3214B00E4D0FE = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 99B8388E19C3209E00E4D0FE;
+						TestTargetID = 99B838BC19C3214B00E4D0FE;
 					};
 				};
 			};
-			buildConfigurationList = 99B8388A19C3209E00E4D0FE /* Build configuration list for PBXProject "Punkt" */;
+			buildConfigurationList = 99B838B819C3214B00E4D0FE /* Build configuration list for PBXProject "Punkt" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -176,28 +185,28 @@
 				en,
 				Base,
 			);
-			mainGroup = 99B8388619C3209E00E4D0FE;
-			productRefGroup = 99B8389019C3209E00E4D0FE /* Products */;
+			mainGroup = 99B838B419C3214B00E4D0FE;
+			productRefGroup = 99B838BE19C3214B00E4D0FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99B8388E19C3209E00E4D0FE /* Punkt */,
-				99B838A319C3209E00E4D0FE /* PunktTests */,
+				99B838BC19C3214B00E4D0FE /* Punkt */,
+				99B838D019C3214B00E4D0FE /* PunktTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		99B8388D19C3209E00E4D0FE /* Resources */ = {
+		99B838BB19C3214B00E4D0FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B8389C19C3209E00E4D0FE /* Images.xcassets in Resources */,
-				99B8389F19C3209E00E4D0FE /* MainMenu.xib in Resources */,
+				99B838C919C3214B00E4D0FE /* Images.xcassets in Resources */,
+				99B838CC19C3214B00E4D0FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99B838A219C3209E00E4D0FE /* Resources */ = {
+		99B838CF19C3214B00E4D0FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -207,47 +216,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		99B8388B19C3209E00E4D0FE /* Sources */ = {
+		99B838B919C3214B00E4D0FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B8389A19C3209E00E4D0FE /* Punkt.xcdatamodeld in Sources */,
-				99B8389719C3209E00E4D0FE /* AppDelegate.swift in Sources */,
-				99B8389519C3209E00E4D0FE /* main.swift in Sources */,
+				99B838E419C3241F00E4D0FE /* BoxKit.swift in Sources */,
+				99B838E619C3242B00E4D0FE /* Dollar.swift in Sources */,
+				99B838C719C3214B00E4D0FE /* AppDelegate.swift in Sources */,
+				99B838E219C322E600E4D0FE /* TableDelegate.swift in Sources */,
+				99B838C519C3214B00E4D0FE /* ViewController.swift in Sources */,
+				99B838C319C3214B00E4D0FE /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99B838A019C3209E00E4D0FE /* Sources */ = {
+		99B838CD19C3214B00E4D0FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B838AB19C3209E00E4D0FE /* PunktTests.swift in Sources */,
+				99B838D819C3214B00E4D0FE /* PunktTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		99B838A619C3209E00E4D0FE /* PBXTargetDependency */ = {
+		99B838D319C3214B00E4D0FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 99B8388E19C3209E00E4D0FE /* Punkt */;
-			targetProxy = 99B838A519C3209E00E4D0FE /* PBXContainerItemProxy */;
+			target = 99B838BC19C3214B00E4D0FE /* Punkt */;
+			targetProxy = 99B838D219C3214B00E4D0FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		99B8389D19C3209E00E4D0FE /* MainMenu.xib */ = {
+		99B838CA19C3214B00E4D0FE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				99B8389E19C3209E00E4D0FE /* Base */,
+				99B838CB19C3214B00E4D0FE /* Base */,
 			);
-			name = MainMenu.xib;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		99B838AC19C3209E00E4D0FE /* Debug */ = {
+		99B838D919C3214B00E4D0FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,7 +301,7 @@
 			};
 			name = Debug;
 		};
-		99B838AD19C3209E00E4D0FE /* Release */ = {
+		99B838DA19C3214B00E4D0FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -324,7 +336,7 @@
 			};
 			name = Release;
 		};
-		99B838AF19C3209E00E4D0FE /* Debug */ = {
+		99B838DC19C3214B00E4D0FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -335,7 +347,7 @@
 			};
 			name = Debug;
 		};
-		99B838B019C3209E00E4D0FE /* Release */ = {
+		99B838DD19C3214B00E4D0FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -346,7 +358,7 @@
 			};
 			name = Release;
 		};
-		99B838B219C3209E00E4D0FE /* Debug */ = {
+		99B838DF19C3214B00E4D0FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -366,7 +378,7 @@
 			};
 			name = Debug;
 		};
-		99B838B319C3209E00E4D0FE /* Release */ = {
+		99B838E019C3214B00E4D0FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -385,45 +397,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		99B8388A19C3209E00E4D0FE /* Build configuration list for PBXProject "Punkt" */ = {
+		99B838B819C3214B00E4D0FE /* Build configuration list for PBXProject "Punkt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99B838AC19C3209E00E4D0FE /* Debug */,
-				99B838AD19C3209E00E4D0FE /* Release */,
+				99B838D919C3214B00E4D0FE /* Debug */,
+				99B838DA19C3214B00E4D0FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99B838AE19C3209E00E4D0FE /* Build configuration list for PBXNativeTarget "Punkt" */ = {
+		99B838DB19C3214B00E4D0FE /* Build configuration list for PBXNativeTarget "Punkt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99B838AF19C3209E00E4D0FE /* Debug */,
-				99B838B019C3209E00E4D0FE /* Release */,
+				99B838DC19C3214B00E4D0FE /* Debug */,
+				99B838DD19C3214B00E4D0FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		99B838B119C3209E00E4D0FE /* Build configuration list for PBXNativeTarget "PunktTests" */ = {
+		99B838DE19C3214B00E4D0FE /* Build configuration list for PBXNativeTarget "PunktTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99B838B219C3209E00E4D0FE /* Debug */,
-				99B838B319C3209E00E4D0FE /* Release */,
+				99B838DF19C3214B00E4D0FE /* Debug */,
+				99B838E019C3214B00E4D0FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		99B8389819C3209E00E4D0FE /* Punkt.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				99B8389919C3209E00E4D0FE /* Punkt.xcdatamodel */,
-			);
-			currentVersion = 99B8389919C3209E00E4D0FE /* Punkt.xcdatamodel */;
-			path = Punkt.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 99B8388719C3209E00E4D0FE /* Project object */;
+	rootObject = 99B838B519C3214B00E4D0FE /* Project object */;
 }
