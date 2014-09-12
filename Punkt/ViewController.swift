@@ -18,7 +18,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         
         let issues = [
-            ("This line might be a little bit longer than usual, because I'm trying to see if the lines break properly.", ["bar", "baz"]),
+            ("This line might be a little bit longer than usual, because I'm ai. trying to see if the lines break properly.", ["bar", "baz"]),
             ("And this one's short", ["bar", "baz"])
         ]
         
@@ -68,6 +68,8 @@ class ViewController: NSViewController {
         title.name = "title"
         title.font = NSFont.boldSystemFontOfSize(13)
         title.padding.top = 8
+        title.padding.bottom = 4
+        title.padding.right = 15
         content.add(title)
         
         var labels = Box()
