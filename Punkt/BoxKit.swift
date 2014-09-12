@@ -78,7 +78,10 @@ struct Position {
     
     var width: Float {
         get {
-            return left! + right!
+            var width: Float = 0
+            width += (left != nil) ? left! : 0
+            width += (right != nil) ? right! : 0
+            return width
         }
     }
     
@@ -421,10 +424,12 @@ class Box : NSObject {
         if self.width != nil {
             availableWidth = self.width!
         } else if parent != nil && parent!.width != nil {
-            availableWidth = parent!.width!
+            availableWidth = parent!.width! - padding.width
         } else {
             availableWidth = Float(Int.max)
         }
+        
+        println("Available width for text label: width=\(width) parent width=\(parent?.width) available=\(availableWidth)")
         
         availableHeight = self.height != nil ? self.height! : Float(Int.max)
         var availableSize = CGSize(width: CGFloat(availableWidth), height: CGFloat(availableHeight))
