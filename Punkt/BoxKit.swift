@@ -429,14 +429,14 @@ class Box : NSObject {
             availableWidth = Float(Int.max)
         }
         
-        println("Available width for text label: width=\(width) parent width=\(parent?.width) available=\(availableWidth)")
+//        println("Available width for text label: width=\(width) parent width=\(parent?.width) available=\(availableWidth)")
         
         availableHeight = self.height != nil ? self.height! : Float(Int.max)
         var availableSize = CGSize(width: CGFloat(availableWidth), height: CGFloat(availableHeight))
         
         var size = string.boundingRectWithSize(availableSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: self.textAttributes())
         
-        println("Dimensions computed for text \(text): \(size)")
+//        println("Dimensions computed for text \(text): \(size)")
 
         self.width = Float(ceil(size.width))
         self.height = Float(ceil(size.height))

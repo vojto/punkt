@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6246"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="6246"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -649,7 +650,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="window" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Punkt" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -662,7 +663,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="240"/>
+            <point key="canvasLocation" x="118" y="227"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -675,7 +676,47 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-38" y="631"/>
+        </scene>
+        <!--AuthController-->
+        <scene sceneID="1HL-7R-eK2">
+            <objects>
+                <viewController title="AuthController" storyboardIdentifier="auth" showSeguePresentationStyle="single" id="yFu-5Q-kOj" customClass="AuthController" customModule="Punkt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="QTg-Y8-KBg">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="le1-dx-M30">
+                                <rect key="frame" x="14" y="13" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p7f-t2-3W9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="yFu-5Q-kOj" id="2PC-9Q-6DN"/>
+                                </connections>
+                            </button>
+                            <webView translatesAutoresizingMaskIntoConstraints="NO" id="khj-rV-0gn">
+                                <rect key="frame" x="0.0" y="61" width="450" height="239"/>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                            </webView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="khj-rV-0gn" firstAttribute="top" secondItem="QTg-Y8-KBg" secondAttribute="top" id="Pg1-O7-y74"/>
+                            <constraint firstItem="le1-dx-M30" firstAttribute="leading" secondItem="QTg-Y8-KBg" secondAttribute="leading" constant="20" id="QIK-t5-gFe"/>
+                            <constraint firstAttribute="bottom" secondItem="le1-dx-M30" secondAttribute="bottom" constant="20" id="WzT-88-uX0"/>
+                            <constraint firstItem="khj-rV-0gn" firstAttribute="leading" secondItem="QTg-Y8-KBg" secondAttribute="leading" id="XbN-OZ-Jva"/>
+                            <constraint firstAttribute="trailing" secondItem="khj-rV-0gn" secondAttribute="trailing" id="gJP-Da-Ao9"/>
+                            <constraint firstItem="le1-dx-M30" firstAttribute="top" secondItem="khj-rV-0gn" secondAttribute="bottom" constant="20" id="lA3-57-Sp8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="khj-rV-0gn" id="9Qv-eb-g2k"/>
+                    </connections>
+                </viewController>
+                <customObject id="OXU-r1-4IJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="606"/>
         </scene>
     </scenes>
 </document>

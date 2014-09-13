@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9979EBC319C47B3200229666 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBBB19C47B3200229666 /* extensions.swift */; };
+		9979EBC519C47B3200229666 /* OAuth2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBBE19C47B3200229666 /* OAuth2.swift */; };
+		9979EBC619C47B3200229666 /* OAuth2CodeGrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBBF19C47B3200229666 /* OAuth2CodeGrant.swift */; };
+		9979EBC719C47B3200229666 /* OAuth2ImplicitGrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBC019C47B3200229666 /* OAuth2ImplicitGrant.swift */; };
+		9979EBC819C47B3200229666 /* OAuth2Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBC119C47B3200229666 /* OAuth2Request.swift */; };
+		9979EBCB19C4848600229666 /* RinikExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBCA19C4848600229666 /* RinikExtensions.swift */; };
+		9979EBCD19C4859400229666 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBCC19C4859400229666 /* AuthController.swift */; };
 		99B838C319C3214B00E4D0FE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C219C3214B00E4D0FE /* main.swift */; };
 		99B838C519C3214B00E4D0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C419C3214B00E4D0FE /* ViewController.swift */; };
 		99B838C719C3214B00E4D0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C619C3214B00E4D0FE /* AppDelegate.swift */; };
@@ -30,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9979EBBB19C47B3200229666 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		9979EBBD19C47B3200229666 /* OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2.h; sourceTree = "<group>"; };
+		9979EBBE19C47B3200229666 /* OAuth2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2.swift; sourceTree = "<group>"; };
+		9979EBBF19C47B3200229666 /* OAuth2CodeGrant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2CodeGrant.swift; sourceTree = "<group>"; };
+		9979EBC019C47B3200229666 /* OAuth2ImplicitGrant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2ImplicitGrant.swift; sourceTree = "<group>"; };
+		9979EBC119C47B3200229666 /* OAuth2Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Request.swift; sourceTree = "<group>"; };
+		9979EBCA19C4848600229666 /* RinikExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RinikExtensions.swift; sourceTree = "<group>"; };
+		9979EBCC19C4859400229666 /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		99B838BD19C3214B00E4D0FE /* Punkt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punkt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B838C119C3214B00E4D0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99B838C219C3214B00E4D0FE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -66,6 +81,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9979EBBA19C47B3200229666 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				9979EBBB19C47B3200229666 /* extensions.swift */,
+				9979EBBD19C47B3200229666 /* OAuth2.h */,
+				9979EBBE19C47B3200229666 /* OAuth2.swift */,
+				9979EBBF19C47B3200229666 /* OAuth2CodeGrant.swift */,
+				9979EBC019C47B3200229666 /* OAuth2ImplicitGrant.swift */,
+				9979EBC119C47B3200229666 /* OAuth2Request.swift */,
+			);
+			path = OAuth2;
+			sourceTree = "<group>";
+		};
 		99B838B419C3214B00E4D0FE = {
 			isa = PBXGroup;
 			children = (
@@ -87,9 +115,11 @@
 		99B838BF19C3214B00E4D0FE /* Punkt */ = {
 			isa = PBXGroup;
 			children = (
+				9979EBBA19C47B3200229666 /* OAuth2 */,
 				99B838E819C32D7C00E4D0FE /* NSColor+Hex.h */,
 				99B838E919C32D7C00E4D0FE /* NSColor+Hex.m */,
 				99B838C419C3214B00E4D0FE /* ViewController.swift */,
+				9979EBCC19C4859400229666 /* AuthController.swift */,
 				99B838C619C3214B00E4D0FE /* AppDelegate.swift */,
 				99B838C819C3214B00E4D0FE /* Images.xcassets */,
 				99B838CA19C3214B00E4D0FE /* Main.storyboard */,
@@ -98,6 +128,7 @@
 				99B838E319C3241F00E4D0FE /* BoxKit.swift */,
 				99B838E519C3242B00E4D0FE /* Dollar.swift */,
 				99B838E719C32D7B00E4D0FE /* Punkt-Bridging-Header.h */,
+				9979EBCA19C4848600229666 /* RinikExtensions.swift */,
 			);
 			path = Punkt;
 			sourceTree = "<group>";
@@ -230,9 +261,16 @@
 				99B838EA19C32D7C00E4D0FE /* NSColor+Hex.m in Sources */,
 				99B838E419C3241F00E4D0FE /* BoxKit.swift in Sources */,
 				99B838E619C3242B00E4D0FE /* Dollar.swift in Sources */,
+				9979EBC519C47B3200229666 /* OAuth2.swift in Sources */,
+				9979EBC319C47B3200229666 /* extensions.swift in Sources */,
+				9979EBCD19C4859400229666 /* AuthController.swift in Sources */,
 				99B838C719C3214B00E4D0FE /* AppDelegate.swift in Sources */,
+				9979EBC819C47B3200229666 /* OAuth2Request.swift in Sources */,
+				9979EBCB19C4848600229666 /* RinikExtensions.swift in Sources */,
 				99B838E219C322E600E4D0FE /* TableDelegate.swift in Sources */,
+				9979EBC719C47B3200229666 /* OAuth2ImplicitGrant.swift in Sources */,
 				99B838C519C3214B00E4D0FE /* ViewController.swift in Sources */,
+				9979EBC619C47B3200229666 /* OAuth2CodeGrant.swift in Sources */,
 				99B838C319C3214B00E4D0FE /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

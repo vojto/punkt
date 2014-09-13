@@ -9,11 +9,15 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    @IBOutlet var authController: NSViewController?
     var list = BoxList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
 
         // Do any additional setup after loading the view.
         
@@ -29,13 +33,38 @@ class ViewController: NSViewController {
     
         
         let tableView = list.view(view.bounds)
-        view.addSubview(tableView)
+//        view.addSubview(tableView)
     }
 
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    override func viewDidAppear() {
+        let settings = [
+            "client_id": "my_swift_app",
+            "client_secret": "C7447242-A0CF-47C5-BAC7-B38BA91970A9",
+            "authorize_uri": "https://authorize.smartplatforms.org/authorize",
+            "token_uri": "https://authorize.smartplatforms.org/token",
+        ]
+        
+        let oauth = OAuth2CodeGrant(settings: settings)
+        oauth.onAuthorize = { parameters in
+            println("Did authorize with parameters: \(parameters)")
+        }
+        oauth.onFailure = { error in
+            println("Authorization went wrong: \(error.localizedDescription)")
+        }
+        
+        
+        let url = oauth.authorizeURLWithRedirect("foo", scope: "chuj", params: nil)
+        println("URL: \(url)")
+        
+        let controller = storyboard.instantiateControllerWithIdentifier("auth") as AuthController
+        controller.url = url
+        presentViewControllerAsSheet(controller)
     }
     
     func boxForIssue(issue: (String, [String])) -> Box {
