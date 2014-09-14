@@ -46,7 +46,7 @@ class ViewController: NSViewController {
         let settings = [
             "client_id": "my_swift_app",
             "client_secret": "C7447242-A0CF-47C5-BAC7-B38BA91970A9",
-            "authorize_uri": "https://authorize.smartplatforms.org/authorize",
+            "authorize_uri": "https://github.com/login/oauth/authorize",
             "token_uri": "https://authorize.smartplatforms.org/token",
         ]
         
