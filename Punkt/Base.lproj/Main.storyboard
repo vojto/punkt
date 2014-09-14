@@ -683,7 +683,7 @@
             <objects>
                 <viewController title="AuthController" storyboardIdentifier="auth" showSeguePresentationStyle="single" id="yFu-5Q-kOj" customClass="AuthController" customModule="Punkt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="QTg-Y8-KBg">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="949" height="564"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="le1-dx-M30">
@@ -697,8 +697,10 @@
                                 </connections>
                             </button>
                             <webView translatesAutoresizingMaskIntoConstraints="NO" id="khj-rV-0gn">
-                                <rect key="frame" x="0.0" y="61" width="450" height="239"/>
-                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                                <rect key="frame" x="0.0" y="61" width="949" height="503"/>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                    <nil key="identifier"/>
+                                </webPreferences>
                             </webView>
                         </subviews>
                         <constraints>
@@ -716,7 +718,7 @@
                 </viewController>
                 <customObject id="OXU-r1-4IJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="606"/>
+            <point key="canvasLocation" x="845.5" y="738"/>
         </scene>
     </scenes>
 </document>

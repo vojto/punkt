@@ -8,6 +8,8 @@
 
 import Cocoa
 
+let AuthRedirectURL = "http://rinik.net/punkt"
+
 class ViewController: NSViewController {
     
     @IBOutlet var authController: NSViewController?
@@ -44,10 +46,10 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         let settings = [
-            "client_id": "my_swift_app",
-            "client_secret": "C7447242-A0CF-47C5-BAC7-B38BA91970A9",
+            "client_id": "53eb5cf7707eb8ac57cc",
+            "client_secret": "d480ae1eeca5a1fd2d5140f8262bab12cfd6ef06",
             "authorize_uri": "https://github.com/login/oauth/authorize",
-            "token_uri": "https://authorize.smartplatforms.org/token",
+            "token_uri": "wtf",
         ]
         
         let oauth = OAuth2CodeGrant(settings: settings)
@@ -59,12 +61,16 @@ class ViewController: NSViewController {
         }
         
         
-        let url = oauth.authorizeURLWithRedirect("foo", scope: "chuj", params: nil)
+        let url = oauth.authorizeURLWithRedirect(AuthRedirectURL, scope: "user,repo", params: nil)
         println("URL: \(url)")
         
-        let controller = storyboard.instantiateControllerWithIdentifier("auth") as AuthController
-        controller.url = url
-        presentViewControllerAsSheet(controller)
+        let authController = storyboard.instantiateControllerWithIdentifier("auth") as AuthController
+        authController.url = url
+        presentViewControllerAsModalWindow(authController)
+        
+        authController.onAuthorize = {
+            println("Authorized - url = \($0)")
+        }
     }
     
     func boxForIssue(issue: (String, [String])) -> Box {
