@@ -22,7 +22,7 @@ public class OAuth2ImplicitGrant: OAuth2 {
 		logIfVerbose("Handling redirect URL \(redirect.description)")
 		
 		var error: NSError?
-		var comp = NSURLComponents(URL: redirect, resolvingAgainstBaseURL: true)
+		var comp = NSURLComponents(URL: redirect, resolvingAgainstBaseURL: true)!
 		
 		// token should be in the URL fragment
 		if nil != comp.fragment && countElements(comp.fragment!) > 0 {

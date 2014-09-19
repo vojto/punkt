@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import OAuth2
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 

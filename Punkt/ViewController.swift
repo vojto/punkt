@@ -49,7 +49,7 @@ class ViewController: NSViewController {
             "client_id": "53eb5cf7707eb8ac57cc",
             "client_secret": "d480ae1eeca5a1fd2d5140f8262bab12cfd6ef06",
             "authorize_uri": "https://github.com/login/oauth/authorize",
-            "token_uri": "wtf",
+            "token_uri": "https://github.com/login/oauth/access_token",
         ]
         
         let oauth = OAuth2CodeGrant(settings: settings)
@@ -70,6 +70,7 @@ class ViewController: NSViewController {
         
         authController.onAuthorize = {
             println("Authorized - url = \($0)")
+            oauth.handleRedirectURL($0)
         }
     }
     

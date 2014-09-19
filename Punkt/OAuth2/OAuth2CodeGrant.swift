@@ -54,13 +54,14 @@ public class OAuth2CodeGrant: OAuth2 {
 	 */
 	public func tokenRequest(code: String) -> NSURLRequest {
 		let url = tokenURLWithRedirect(redirect, code: code, params: nil)
-		let comp = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
+		let comp = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)!
 		let body = comp.query
 		comp.query = nil
 		
 		let post = NSMutableURLRequest(URL: comp.URL!)
 		post.HTTPMethod = "POST"
 		post.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        post.setValue("application/json", forHTTPHeaderField: "Accept")
 		post.HTTPBody = body?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
 		
 		return post
@@ -107,6 +108,7 @@ public class OAuth2CodeGrant: OAuth2 {
 			else if nil != response && nil != data {
 				if let http = response as? NSHTTPURLResponse {
 					if 200 == http.statusCode {
+                        let str = NSString(data: data, encoding: NSUTF8StringEncoding)
 						if let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &finalError) as? NSDictionary {
 							if let access = json["access_token"] as? String {
 								self.accessToken = access
@@ -146,7 +148,7 @@ public class OAuth2CodeGrant: OAuth2 {
 		var code: String?
 		var error: NSError?
 		
-		let comp = NSURLComponents(URL: redirect, resolvingAgainstBaseURL: true)
+		let comp = NSURLComponents(URL: redirect, resolvingAgainstBaseURL: true)!
 		if nil != comp.query && countElements(comp.query!) > 0 {
 			let query = OAuth2CodeGrant.paramsFromQuery(comp.query!)
 			if let cd = query["code"] {
