@@ -61,7 +61,7 @@ class GithubClient  {
         var params: [String:String] = [:]
         
         params["access_token"] = accessToken
-        params["per_page"] = "1"
+//        params["per_page"] = "1"
 
         println("Params: \(params)")
         

@@ -188,7 +188,7 @@ class Box : NSObject {
             
         }
         
-        set(value) { self.height = value - margin.height - padding.height }
+        set(value) { self.height = value - margin.width - padding.height }
     }
     
     var innerWidth: Float {
@@ -268,7 +268,7 @@ class Box : NSObject {
 //            return
         }
         
-        println("laying out \(name) [\((width, height))]")
+//        println("laying out \(name) [\((width, height))]")
         
         // Reality check
         if self.text != nil && self.children.count > 0 {
@@ -406,7 +406,7 @@ class Box : NSObject {
         
         self.computeDimensionsFromChildren()
         
-        println("\t\tfinished \(name) \((width, height))")
+//        println("\t\tfinished \(name) \((width, height))")
         
         self.isLaidOut = true
     }
@@ -517,10 +517,11 @@ class Box : NSObject {
         self.givenWidth = Float(bounds.size.width)
 //        self.outerHeight = Float(bounds.size.height)
     
-        for var i = 0; i < 100; i++ {
-            println("")
-        }
+//        for var i = 0; i < 100; i++ {
+//            println("")
+//        }
         
+//        return
         self.reset()
         self.layout()
         

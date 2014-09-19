@@ -93,14 +93,12 @@ class ViewController: NSViewController {
         
         var container = ContainerBox()
         container.name = "container"
-        container.backgroundColor = NSColor.blueColor()
         
         var numberWidth: Float = 60
         var padding: Float = 16
         
-        var number = Box(width: numberWidth, height: 40)
+        var number = Box(width: numberWidth, height: 60)
         number.name = "number"
-        number.backgroundColor = NSColor.whiteColor()
         number.text = "#" + issue.number!
         number.textColor = NSColor(hex: "c4c4c4")
         number.padding.all = padding
@@ -118,6 +116,7 @@ class ViewController: NSViewController {
         
         var title = Box(text: issueTitle)
         title.name = "title"
+//        title.backgroundColor = NSColor.redColor()
         title.font = NSFont.boldSystemFontOfSize(13)
         title.padding.top = 8
         title.padding.bottom = 4
