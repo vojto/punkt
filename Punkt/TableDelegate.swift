@@ -11,6 +11,7 @@ import Cocoa
 
 class BoxList: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     var numberOfItems: Int
+    var tableView: NSTableView?
     
     var cachedBoxes: [Int:Box] = [:]
     
@@ -60,29 +61,32 @@ class BoxList: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     func view(frame: NSRect) -> NSView {
         let scrollView = NSScrollView(frame: frame)
         // should it be bigger than the scroll view?
-        let tableView = NSTableView(frame: frame)
+        self.tableView = NSTableView(frame: frame)
         
         let column = NSTableColumn(identifier: "column")
         column.width = frame.size.width
         
 //        println("Setting delegate/data source to: \(self)")
         
-        tableView.addTableColumn(column)
-        tableView.setDelegate(self)
-        tableView.setDataSource(self)
-        tableView.reloadData() // needed?
+        tableView!.addTableColumn(column)
+        tableView!.setDelegate(self)
+        tableView!.setDataSource(self)
         
-        tableView.allowsColumnReordering = false
-        tableView.allowsColumnResizing = false
-        tableView.allowsColumnSelection = false
-        tableView.headerView = nil
+        tableView!.allowsColumnReordering = false
+        tableView!.allowsColumnResizing = false
+        tableView!.allowsColumnSelection = false
+        tableView!.headerView = nil
         
-        tableView.gridStyleMask = NSTableViewGridLineStyle.SolidHorizontalGridLineMask;
+        tableView!.gridStyleMask = NSTableViewGridLineStyle.SolidHorizontalGridLineMask;
         
         scrollView.documentView = tableView
         scrollView.hasVerticalScroller = true // needed?
         
         return scrollView
+    }
+    
+    func refresh() {
+        tableView!.reloadData()
     }
     
 

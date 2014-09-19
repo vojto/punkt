@@ -170,7 +170,11 @@ class Box : NSObject {
     
     var outerWidth: Float {
         get {
-            return width! + margin.width + padding.width
+            if let w = width {
+                return w + margin.width + padding.width
+            } else {
+                return margin.width + padding.width
+            }
         }
         
         set(value) {
@@ -180,7 +184,12 @@ class Box : NSObject {
     
     var outerHeight: Float {
         get {
-            return height! + margin.height + padding.height
+            if let h = height {
+                return h + margin.height + padding.height
+            } else {
+                return margin.height + padding.height
+            }
+            
         }
         
         set(value) {

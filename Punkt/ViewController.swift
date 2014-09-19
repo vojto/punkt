@@ -14,28 +14,29 @@ class ViewController: NSViewController {
     
     @IBOutlet var authController: NSViewController?
     var list = BoxList()
+    var client = GithubClient.sharedInstance
+    var issues: [Issue]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-
-        // Do any additional setup after loading the view.
-        
-        let issues = [
-            ("This line might be a little bit longer than usual, because I'm ai. trying to see if the lines break properly.", ["bar", "baz"]),
-            ("And this one's short", ["bar", "baz"])
-        ]
-        
-        list.numberOfItems = issues.count
-        list.itemAtIndex = {
-            return self.boxForIssue(issues[$0])
-        }
     
         
+        list.numberOfItems = 0
+        list.itemAtIndex = self.boxForIssueAtIndex
+    
         let tableView = list.view(view.bounds)
-//        view.addSubview(tableView)
+        view.addSubview(tableView)
+        
+        list.refresh()
+    }
+    
+    func loadIssues() {
+        client.loadIssues("vojto/punkt") { issues in
+            println("Loaded issues: \(issues)")
+            self.issues = issues
+            self.list.numberOfItems = issues.count
+            self.list.refresh()
+        }
     }
 
     override var representedObject: AnyObject? {
@@ -55,6 +56,11 @@ class ViewController: NSViewController {
         let oauth = OAuth2CodeGrant(settings: settings)
         oauth.onAuthorize = { parameters in
             println("Did authorize with parameters: \(parameters)")
+            let params = parameters as [String:String]
+            self.client.accessToken = params["access_token"]
+            
+            // TODO: Later we'll want something sophisticated, reactive with promises and shit
+            self.loadIssues()
         }
         oauth.onFailure = { error in
             println("Authorization went wrong: \(error.localizedDescription)")
@@ -74,8 +80,13 @@ class ViewController: NSViewController {
         }
     }
     
-    func boxForIssue(issue: (String, [String])) -> Box {
-        let (issueTitle, issueLabels) = issue
+    func boxForIssueAtIndex(index: Int) -> Box {
+        let issue = self.issues![index]
+        return self.boxForIssue(issue)
+    }
+    
+    func boxForIssue(issue: Issue) -> Box {
+        let issueTitle = issue.title!
         
         var container = Box()
         
@@ -85,7 +96,7 @@ class ViewController: NSViewController {
         var number = Box(width: numberWidth, height: 40)
         number.name = "number"
         number.backgroundColor = NSColor.whiteColor()
-        number.text = "#605"
+        number.text = "#" + issue.number!
         number.textColor = NSColor(hex: "c4c4c4")
         number.padding.all = padding
         number.font = NSFont.boldSystemFontOfSize(12)
@@ -126,8 +137,8 @@ class ViewController: NSViewController {
             labels.add(label)
         }
         
-        for label in issueLabels {
-            addLabel(label, "0052cc")
+        for label in issue.labels! {
+            addLabel(label.name!, label.color!)
         }
         
         return container

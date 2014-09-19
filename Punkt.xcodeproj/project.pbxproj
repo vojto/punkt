@@ -14,6 +14,9 @@
 		9979EBC819C47B3200229666 /* OAuth2Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBC119C47B3200229666 /* OAuth2Request.swift */; };
 		9979EBCB19C4848600229666 /* RinikExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBCA19C4848600229666 /* RinikExtensions.swift */; };
 		9979EBCD19C4859400229666 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979EBCC19C4859400229666 /* AuthController.swift */; };
+		99B2F52419CC534B00FBDD69 /* GithubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B2F52319CC534B00FBDD69 /* GithubClient.swift */; };
+		99B2F52E19CC555800FBDD69 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B2F52B19CC553100FBDD69 /* Alamofire.framework */; };
+		99B2F53019CC557500FBDD69 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 99B2F52B19CC553100FBDD69 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99B838C319C3214B00E4D0FE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C219C3214B00E4D0FE /* main.swift */; };
 		99B838C519C3214B00E4D0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C419C3214B00E4D0FE /* ViewController.swift */; };
 		99B838C719C3214B00E4D0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838C619C3214B00E4D0FE /* AppDelegate.swift */; };
@@ -24,9 +27,24 @@
 		99B838E419C3241F00E4D0FE /* BoxKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E319C3241F00E4D0FE /* BoxKit.swift */; };
 		99B838E619C3242B00E4D0FE /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E519C3242B00E4D0FE /* Dollar.swift */; };
 		99B838EA19C32D7C00E4D0FE /* NSColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B838E919C32D7C00E4D0FE /* NSColor+Hex.m */; };
+		99E61DC719CC5CF9009FA914 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E61DC619CC5CF9009FA914 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		99B2F52A19CC553100FBDD69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99B2F52519CC553100FBDD69 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		99B2F52C19CC553100FBDD69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99B2F52519CC553100FBDD69 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
 		99B838D219C3214B00E4D0FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99B838B519C3214B00E4D0FE /* Project object */;
@@ -35,6 +53,20 @@
 			remoteInfo = Punkt;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		99B2F52F19CC556200FBDD69 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				99B2F53019CC557500FBDD69 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9979EBBB19C47B3200229666 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
@@ -45,6 +77,8 @@
 		9979EBC119C47B3200229666 /* OAuth2Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Request.swift; sourceTree = "<group>"; };
 		9979EBCA19C4848600229666 /* RinikExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RinikExtensions.swift; sourceTree = "<group>"; };
 		9979EBCC19C4859400229666 /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		99B2F52319CC534B00FBDD69 /* GithubClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubClient.swift; sourceTree = "<group>"; };
+		99B2F52519CC553100FBDD69 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		99B838BD19C3214B00E4D0FE /* Punkt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punkt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B838C119C3214B00E4D0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99B838C219C3214B00E4D0FE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -61,6 +95,7 @@
 		99B838E719C32D7B00E4D0FE /* Punkt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Punkt-Bridging-Header.h"; sourceTree = "<group>"; };
 		99B838E819C32D7C00E4D0FE /* NSColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Hex.h"; sourceTree = "<group>"; };
 		99B838E919C32D7C00E4D0FE /* NSColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Hex.m"; sourceTree = "<group>"; };
+		99E61DC619CC5CF9009FA914 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B2F52E19CC555800FBDD69 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +130,15 @@
 			path = OAuth2;
 			sourceTree = "<group>";
 		};
+		99B2F52619CC553100FBDD69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99B2F52B19CC553100FBDD69 /* Alamofire.framework */,
+				99B2F52D19CC553100FBDD69 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		99B838B419C3214B00E4D0FE = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +160,7 @@
 		99B838BF19C3214B00E4D0FE /* Punkt */ = {
 			isa = PBXGroup;
 			children = (
+				99B2F52519CC553100FBDD69 /* Alamofire.xcodeproj */,
 				9979EBBA19C47B3200229666 /* OAuth2 */,
 				99B838E819C32D7C00E4D0FE /* NSColor+Hex.h */,
 				99B838E919C32D7C00E4D0FE /* NSColor+Hex.m */,
@@ -125,10 +171,12 @@
 				99B838CA19C3214B00E4D0FE /* Main.storyboard */,
 				99B838C019C3214B00E4D0FE /* Supporting Files */,
 				99B838E119C322E600E4D0FE /* TableDelegate.swift */,
+				99E61DC619CC5CF9009FA914 /* Models.swift */,
 				99B838E319C3241F00E4D0FE /* BoxKit.swift */,
 				99B838E519C3242B00E4D0FE /* Dollar.swift */,
 				99B838E719C32D7B00E4D0FE /* Punkt-Bridging-Header.h */,
 				9979EBCA19C4848600229666 /* RinikExtensions.swift */,
+				99B2F52319CC534B00FBDD69 /* GithubClient.swift */,
 			);
 			path = Punkt;
 			sourceTree = "<group>";
@@ -169,6 +217,7 @@
 				99B838B919C3214B00E4D0FE /* Sources */,
 				99B838BA19C3214B00E4D0FE /* Frameworks */,
 				99B838BB19C3214B00E4D0FE /* Resources */,
+				99B2F52F19CC556200FBDD69 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +275,12 @@
 			mainGroup = 99B838B419C3214B00E4D0FE;
 			productRefGroup = 99B838BE19C3214B00E4D0FE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 99B2F52619CC553100FBDD69 /* Products */;
+					ProjectRef = 99B2F52519CC553100FBDD69 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				99B838BC19C3214B00E4D0FE /* Punkt */,
@@ -233,6 +288,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		99B2F52B19CC553100FBDD69 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 99B2F52A19CC553100FBDD69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99B2F52D19CC553100FBDD69 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 99B2F52C19CC553100FBDD69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		99B838BB19C3214B00E4D0FE /* Resources */ = {
@@ -263,6 +335,7 @@
 				99B838E619C3242B00E4D0FE /* Dollar.swift in Sources */,
 				9979EBC519C47B3200229666 /* OAuth2.swift in Sources */,
 				9979EBC319C47B3200229666 /* extensions.swift in Sources */,
+				99E61DC719CC5CF9009FA914 /* Models.swift in Sources */,
 				9979EBCD19C4859400229666 /* AuthController.swift in Sources */,
 				99B838C719C3214B00E4D0FE /* AppDelegate.swift in Sources */,
 				9979EBC819C47B3200229666 /* OAuth2Request.swift in Sources */,
@@ -270,6 +343,7 @@
 				99B838E219C322E600E4D0FE /* TableDelegate.swift in Sources */,
 				9979EBC719C47B3200229666 /* OAuth2ImplicitGrant.swift in Sources */,
 				99B838C519C3214B00E4D0FE /* ViewController.swift in Sources */,
+				99B2F52419CC534B00FBDD69 /* GithubClient.swift in Sources */,
 				9979EBC619C47B3200229666 /* OAuth2CodeGrant.swift in Sources */,
 				99B838C319C3214B00E4D0FE /* main.swift in Sources */,
 			);
