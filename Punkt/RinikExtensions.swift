@@ -21,3 +21,15 @@ extension WebView {
         self.mainFrame.loadRequest(NSURLRequest(URL: url))
     }
 }
+
+extension NSView {
+    func addConstraint(format: NSString, views: Dictionary<String, NSView>) {
+        let constraints = NSLayoutConstraint.constraintsWithVisualFormat(format, options: nil, metrics: nil, views: views)
+        self.addConstraints(constraints)
+    }
+    
+    func addConstraint(format: NSString, view: NSView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.addConstraint(format, views: ["v": view])
+    }
+}

@@ -27,6 +27,9 @@ class ViewController: NSViewController {
         let tableView = list.view(view.bounds)
         view.addSubview(tableView)
         
+        view.addConstraint("|[v]|", view: tableView)
+        view.addConstraint("V:|[v]|", view: tableView)
+        
         list.refresh()
     }
     
