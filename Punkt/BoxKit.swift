@@ -31,9 +31,7 @@ class BKView : NSView {
     }
     
     override var flipped: Bool {
-        get {
-            return true
-        }
+        get { return true }
     }
     
     required init(coder: NSCoder) {
@@ -55,6 +53,11 @@ class BKView : NSView {
             string.drawInRect(self.innerBounds, withAttributes: box!.textAttributes())
         }
     }
+    
+    override func resizeSubviewsWithOldSize(oldSize: NSSize) {
+        println("resizing subviews")
+    }
+    
 
 }
 
@@ -65,9 +68,7 @@ struct Position {
     var left: Float?
     
     var all: Float {
-        get {
-            return top!
-        }
+        get { return top! }
         set(value) {
             top = value
             right = value
@@ -86,21 +87,15 @@ struct Position {
     }
     
     var height: Float {
-        get {
-            return top! + bottom!
-        }
+        get { return top! + bottom! }
     }
     
     var hasHorizontal: Bool {
-        get {
-            return left != nil && right != nil
-        }
+        get { return left != nil && right != nil }
     }
     
     var hasVertical: Bool {
-        get {
-            return top != nil && bottom != nil
-        }
+        get { return top != nil && bottom != nil }
     }
     
     init() {
@@ -151,21 +146,15 @@ class Box : NSObject {
     var position: Position = Position()
     
     var isAbsolute: Bool {
-        get {
-            return position.left != nil || position.top != nil
-        }
+        get { return position.left != nil || position.top != nil }
     }
     
     var hasWidth: Bool {
-        get {
-            return self.width != nil
-        }
+        get { return self.width != nil }
     }
     
     var hasHeight: Bool {
-        get {
-            return self.height != nil
-        }
+        get { return self.height != nil }
     }
     
     var outerWidth: Float {
@@ -177,9 +166,7 @@ class Box : NSObject {
             }
         }
         
-        set(value) {
-            self.width = value - margin.width - padding.width
-        }
+        set(value) { self.width = value - margin.width - padding.width }
     }
     
     var outerHeight: Float {
@@ -192,27 +179,17 @@ class Box : NSObject {
             
         }
         
-        set(value) {
-            self.height = value - margin.height - padding.height
-        }
+        set(value) { self.height = value - margin.height - padding.height }
     }
     
     var innerWidth: Float {
-        get {
-            return width!
-        }
-        set(value) {
-            self.width = value
-        }
+        get { return width! }
+        set(value) { self.width = value }
     }
     
     var innerHeight: Float {
-        get {
-            return height!
-        }
-        set(value) {
-            self.height = value
-        }
+        get { return height! }
+        set(value) { self.height = value }
     }
     
     override init() {

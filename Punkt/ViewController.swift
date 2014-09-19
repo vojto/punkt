@@ -92,6 +92,7 @@ class ViewController: NSViewController {
         let issueTitle = issue.title!
         
         var container = Box()
+        container.backgroundColor = NSColor.blueColor()
         
         var numberWidth: Float = 60
         var padding: Float = 16
