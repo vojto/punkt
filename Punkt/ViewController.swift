@@ -91,7 +91,8 @@ class ViewController: NSViewController {
     func boxForIssue(issue: Issue) -> Box {
         let issueTitle = issue.title!
         
-        var container = Box()
+        var container = ContainerBox()
+        container.name = "container"
         container.backgroundColor = NSColor.blueColor()
         
         var numberWidth: Float = 60

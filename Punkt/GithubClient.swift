@@ -61,8 +61,8 @@ class GithubClient  {
         var params: [String:String] = [:]
         
         params["access_token"] = accessToken
-//        params["per_page"] = "3"
-        
+        params["per_page"] = "1"
+
         println("Params: \(params)")
         
         Alamofire.request(.GET, url, parameters: params).responseJSON { (_, response, json, _) in

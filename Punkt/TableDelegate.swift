@@ -29,7 +29,7 @@ class BoxList: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(tableView: NSTableView!, heightOfRow row: Int) -> CGFloat {
         var box = self.boxAtIndex(row)
-        box.outerWidth = Float(tableView.bounds.size.width)
+        box.givenWidth = Float(tableView.bounds.size.width)
         box.layout()
         return CGFloat(box.outerHeight)
     }
@@ -39,9 +39,7 @@ class BoxList: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         println("Getting view for row \(row) - column width \(width)")
         
         var box = self.boxAtIndex(row)
-        box.outerWidth = Float(width)
-        
-        box.layout()
+//        box.outerWidth = Float(width)
         
         return box.view()
     }

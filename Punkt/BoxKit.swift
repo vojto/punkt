@@ -55,7 +55,7 @@ class BKView : NSView {
     }
     
     override func resizeSubviewsWithOldSize(oldSize: NSSize) {
-        println("resizing subviews")
+        self.box!.updateSizeFromView()
     }
     
 
@@ -122,8 +122,17 @@ struct Position {
 class Box : NSObject {
     var name: String?
     
-    private var width: Float?
-    private var height: Float?
+    var isContainer: Bool { get { return false } }
+    
+    var givenWidth: Float? {
+        didSet { self.outerWidth = givenWidth! }
+    }
+    var givenHeight: Float? {
+        didSet { self.outerHeight = givenHeight! }
+    }
+    
+    var width: Float?
+    var height: Float?
     var breaksLine = false
     
     private var childrenWidth: Float = 0
@@ -198,25 +207,25 @@ class Box : NSObject {
     
     init(width: Float, height: Float) {
         super.init()
-        self.outerWidth = width
-        self.outerHeight = height
+        self.givenWidth = width
+        self.givenHeight = height
     }
     
     init(width: Float) {
         super.init()
-        self.outerWidth = width
+        self.givenWidth = width
     }
     
     init(width: Float, height: Float, text: String) {
         super.init()
-        self.outerWidth = width
-        self.outerHeight = height
+        self.givenWidth = width
+        self.givenHeight = height
         self.text = text
     }
     
     init(height: Float, text: String) {
         super.init()
-        self.outerHeight = height
+        self.givenHeight = height
         self.text = text
     }
     
@@ -236,10 +245,30 @@ class Box : NSObject {
         layout(nil)
     }
     
+    func reset() {
+        if let w = self.givenWidth {
+            self.outerWidth = w
+        } else {
+            self.width = nil
+        }
+        if let h = self.givenHeight {
+            self.outerHeight = h
+        } else {
+            self.height = nil
+        }
+        
+        for child in children {
+            child.reset()
+        }
+    }
+    
     func layout(parent: Box?) {
         if isLaidOut {
-            return
+//            println("already laid out \(name) [\((width, height))]")
+//            return
         }
+        
+        println("laying out \(name) [\((width, height))]")
         
         // Reality check
         if self.text != nil && self.children.count > 0 {
@@ -377,6 +406,8 @@ class Box : NSObject {
         
         self.computeDimensionsFromChildren()
         
+        println("\t\tfinished \(name) \((width, height))")
+        
         self.isLaidOut = true
     }
     
@@ -447,23 +478,7 @@ class Box : NSObject {
             return cached
         }
         
-        var w: Float
-        var h: Float
-        
-        if width != nil {
-            w = outerWidth
-        } else {
-            w = 0
-        }
-
-        if height != nil {
-            h = outerHeight
-        } else {
-            h = 0
-        }
-        
-        let frame = NSMakeRect(CGFloat(left), CGFloat(top), CGFloat(w), CGFloat(h))
-        let view = BKView(frame: frame)
+        let view = BKView(frame: frame())
         view.box = self
         
         for child in children {
@@ -475,4 +490,56 @@ class Box : NSObject {
         
         return view
     }
+    
+    func frame() -> CGRect {
+        var w: Float
+        var h: Float
+        
+        if width != nil {
+            w = outerWidth
+        } else {
+            w = 0
+        }
+        
+        if height != nil {
+            h = outerHeight
+        } else {
+            h = 0
+        }
+        
+        return NSMakeRect(CGFloat(left), CGFloat(top), CGFloat(w), CGFloat(h))
+    }
+    
+    func updateSizeFromView() {
+        if !isContainer { return }
+        
+        let bounds = cachedView!.bounds
+        self.givenWidth = Float(bounds.size.width)
+//        self.outerHeight = Float(bounds.size.height)
+    
+        for var i = 0; i < 100; i++ {
+            println("")
+        }
+        
+        self.reset()
+        self.layout()
+        
+        for child in self.children {
+            child.updateView()
+        }
+    }
+    
+    func updateView() {
+        let view = self.cachedView!
+        view.frame = frame()
+        view.needsDisplay = true
+        
+        for child in children {
+            child.updateView()
+        }
+    }
+}
+
+class ContainerBox: Box {
+    override var isContainer: Bool { get { return true } }
 }
